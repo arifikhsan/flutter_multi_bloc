@@ -38,7 +38,7 @@ class _AppState extends State<App> {
                     print('logger state called');
                   }
                 },
-                child: Text('check logs'),
+                child: Text('check debug console'),
               ),
             ),
           ),
