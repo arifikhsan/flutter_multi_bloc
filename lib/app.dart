@@ -13,7 +13,9 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: Text('Multi Bloc Provider Example'),
+        ),
         body: MultiBlocProvider(
           providers: [
             BlocProvider(
@@ -27,16 +29,16 @@ class _AppState extends State<App> {
             child: BlocListener<CounterBloc, CounterState>(
               listener: (context, state) {
                 if (state is CounterLoaded) {
-                  print('state');
+                  print('counter state called');
                 }
               },
               child: BlocListener<LoggerBloc, LoggerState>(
                 listener: (context, state) {
                   if (state is LoggerInitial) {
-                    print('logger state');
+                    print('logger state called');
                   }
                 },
-                child: Text('aaaa'),
+                child: Text('check logs'),
               ),
             ),
           ),
